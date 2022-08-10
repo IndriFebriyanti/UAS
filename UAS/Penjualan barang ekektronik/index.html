@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barang Elektronik</title>
+</head>
+<body>
+   <h4 class="mb-3">Penjualan Barang Elektronik</h4>
+   <div class="mb-3">
+    <label >Nama Barang</label>
+    <input type="text" class="form-control"  placeholder="iPhone 12" required name="nama_barang">
+  </div>
+
+
+  <div class="mb-3">
+    <label >Harga</label>
+    <input type="text" class="form-control"  placeholder="1000000" required name="harga_barang">
+  </div>
+
+
+  <div class="mb-3">
+    <label >Jumlah </label>
+    <input type="number" class="form-control"  placeholder="3" required name="jumlah_barang">
+
+  </div>
+
+  <div class="mb-3 custom-radio">
+      <label for="">Aksesoris :</label><br>
+      <input type="radio" name="pilih"> Airpods<br>
+      <input type="radio" name="pilih"> Memory <br>
+      <input type="radio" name="pilih"> Case
+  </div>
+
+  <div class="mb-1">
+
+      <table class="table table-hover table-primary">
+          <thead>
+            <tr>
+              <th scope="col">Aksesoris </th>
+              <th scope="col">Harga</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td scope="row">Airpods</td>
+              <td>3000000</td>
+            </tr>
+            <tr>
+              <td scope="row">Memory</td>
+              <td>100000</td>
+            </tr>
+            <tr>
+              <td scope="row">Case</td>
+              <td>110000</td>
+            </tr>
+          </tbody>
+        </table>
+    
+    </div>
+  <div class="mb-3">
+    <label >Total </label>
+    <input type="text" class="form-control" required readonly name="total_pembelian">
+  </div>
+
+  <div class="mb-3">
+    <label >Pajak 10%</label>
+    <input type="text" class="form-control" required readonly name="pajak">
+
+  </div>
+
+  <div class="mb-3">
+    <label >Total Bayar</label>
+    <input type="text" class="form-control" required readonly name="total_bayar">
+
+  </div>
+
+</div>
+
+     <script type="text/javascript">
+        function coba() {
+            var harga_barang = parseFloat (document.form.harga_barang.value);
+            var jumlah_barang = parseFloat(document.form.jumlah_barang.value);
+            var total = harga_barang*jumlah_barang;
+
+            var Aksesoris = "";
+            if (form.pilih[0].checked){
+                Aksesoris= 3000000;
+			}
+			if(form.pilih[1].checked){
+                Aksesoris=100000;
+			} if(form.pilih[2].checked){
+                Aksesoris=110000;
+            }
+
+            var totalSemua = total+Aksesoris;
+            document.form.total_pembelian.value="Rp "+totalSemua;
+
+            var pajak = totalSemua*0.1;
+            document.form.pajak.value="Rp "+pajak;
+
+            var total_bayar = totalSemua+pajak;
+            document.form.total_bayar.value="Rp "+total_bayar;
+          }
+     </script>
+     <button onclick="coba()">Proses</button>
+     <button onclick="coba()">Reset</button>
+</body>
+</html>

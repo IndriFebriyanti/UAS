@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tagihan Listrik</title>
+</head>
+<body>
+    <h4 class="mb-3">Tagihan Listrik</h4>   
+    <div class="mb-3">
+        <label >Nama Pelanggan</label>
+        <input type="text" class="form-control"  placeholder="Aji Susanto" required id="nama_pelanggan">
+    </div>
+
+    <div class="mb-3">
+      <label >Kategori</label>
+      <select class="form-control" id="kategori">
+        <option>Pilih Kategori</option>
+        <option value="sosial">Sosial</option>
+        <option value="rumah">Rumah</option>
+        <option value="industri">Industri</option>
+      </select>
+    </div>
+
+
+    <div class="mb-3">
+        <label >Jumlah Pemakaian Listrik</label>
+        <input type="text" class="form-control"  placeholder="18" required id="jumlah_pemakaian">
+    </div>
+
+
+
+
+    <hr class="mb-4">
+
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Kategori</th>
+            <th scope="col">Abodemen</th>
+            <th scope="col">Tarif PER-KWH</th>
+            <th scope="col">Pajak</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td scope="row">Sosial</td>
+            <td>10000</td>
+            <td>300</td>
+            <td>0%</td>
+          </tr>
+          <tr>
+            <td scope="row">Rumah</td>
+            <td>30000</td>
+            <td>500</td>
+            <td>10%</td>
+          </tr>
+          <tr>
+            <td scope="row">Industri</td>
+            <td>50000</td>
+            <td>1000</td>
+            <td>30%</td>
+          </tr>
+        </tbody>
+      </table>
+    <div class="mb-3">
+
+        <a class="btn btn-success" onclick="proses()">Proses</a>
+        <a href="" class="btn btn-danger">Reset</a>
+
+    </div>
+    <table cellpadding="7" class="table table-hover">
+        <tr>
+            <td>Jumlah</td>
+            <td>Tarif per KWh</td>
+            <td>Abodemen</td>
+            <td>Sub Total</td>
+        </tr>
+        <tr>
+            <td id="out_jumlah"></td>
+            <td id="out_Tarif"></td>
+            <td id="out_Abodemen"></td>
+            <td id="out_Subtotal"></td>
+        </tr>
+    </table>
+      <table cellpadding="5">
+        <tr>
+            <td>Subtotal</td>
+            <td>:</td>
+            <td id="outputTotal"></td>
+        </tr>
+        <tr>
+            <td>Pajak</td>
+            <td>:</td>
+            <td id="outputPajak"></td>
+        </tr>
+        <tr>
+            <td>Bayar</td>
+            <td>:</td>
+            <td id="outputBayar"></td>
+        </tr>
+    </table>
+  </form>
+</div>
+</div>
+</div>          
+
+    <script type="text/javascript">
+     function coba() {
+        <script>
+          function proses(){
+            var kategori = document.getElementById("kategori").value;
+            let jumlah_pemakaian = document.getElementById("jumlah_pemakaian").value;
+
+            let pajak;
+                switch (kategori) {
+                case "sosial":
+
+                    pajak = 0;
+                    break;
+                    case "rumah":
+                    pajak = 0.1;
+                    break;
+                    case "industri":
+                    pajak = 0.3;      
+                    break;
+                }
+            let y=jumlah_pemakaian;
+            let tarif_sosial = 0;
+            let tarif_rumah = 0;
+            let tarih_industri = 0;
+            let abodemen;
+            let subtotal;
+
+            let teks = "";
+            let jumlahPemakaian = "";
+            let hasil_Abodemen = "";
+            let hasil_Subtotal = "";
+            for(let i=1; i <= y; i++){
+                jumlahPemakaian +=+ i + "<br>";
+                if(kategori == "rumah"){
+                tarif_rumah += 500;
+                teks += tarif_rumah + "<br>";
+
+                abodemen = 30000;
+                subtotal = abodemen+tarif_rumah;
+
+                hasil_Abodemen += abodemen+ "<br>";
+                hasil_Subtotal += subtotal + "<br>";
+            }else if(kategori == "sosial"){
+                tarif_sosial += 300;
+                teks += tarif_sosial + "<br>";
+
+                abodemen = 10000;
+                subtotal = abodemen+tarif_sosial;
+
+                hasil_Abodemen += abodemen+ "<br>";
+                hasil_Subtotal += subtotal + "<br>";
+            }else if(kategori == "industri"){
+                tarih_industri += 1000;
+                teks += tarih_industri + "<br>";
+
+                abodemen = 50000;
+                subtotal = abodemen+tarih_industri;
+
+                hasil_Abodemen += abodemen+ "<br>";
+                hasil_Subtotal += subtotal + "<br>";
+
+            }
+                // tampilkan
+                document.getElementById("out_jumlah").innerHTML= jumlahPemakaian;
+                document.getElementById("out_Tarif").innerHTML= teks;
+                document.getElementById("out_Abodemen").innerHTML= hasil_Abodemen;
+                document.getElementById("out_Subtotal").innerHTML= hasil_Subtotal;
+                if(i==i){
+                document.getElementById("outputTotal").innerHTML= subtotal;  
+                let outpajak=pajak*subtotal;
+                document.getElementById("outputPajak").innerHTML= outpajak;
+                let bayar = outpajak + subtotal;
+                document.getElementById("outputBayar").innerHTML= bayar;
+            }
+            }
+
+          }
+        </script>
+
+
+    
+</body>
+</html>

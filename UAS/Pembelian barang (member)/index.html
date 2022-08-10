@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member</title>
+</head>
+<body>
+<h2>Program Pembelian Barang <br></h2>
+<div class="col-md-8 order-md-1 card">
+    <div class="card-body">
+  <h4 class="mb-3">Form Pembelian Barang(Member)</h4>
+  <form class="needs-validation" name="form" onchange="proses()">
+
+
+    <div class="mb-3">
+      <label >Nama Barang</label>
+      <select class="form-control" name="nama_barang" required>
+        <option>Pilih Barang</option>
+        <option value="CPU">CPU</option>
+        <option value="Monitor">Monitor</option>
+        <option value="VGA">VGA</option>
+        <option value="RAM">RAM</option>
+      </select>
+    </div>
+    
+    <div class="mb-3">
+        <label >Jumlah Barang</label>
+        <input type="text" class="form-control"  placeholder="4" required name="jumlah_barang">
+      </div>
+
+      <div class="mb-4">
+          <label for="">Status</label><br>    
+          <select class="form-control" name="Status" required>
+            <option>Member</option>
+            <option value="Pengunjung Baru">Pengunjung Baru</option>
+          </select>
+      </div>
+
+      <div class="mb-3">
+
+         
+      </div>
+      <div class="mb-3">
+        <label >Harga Barang</label>
+        <input type="text" class="form-control" required readonly name="harga_barang">
+
+      </div>
+
+      <div class="mb-3">
+        <label >Total</label>
+        <input type="text" class="form-control" required readonly name="total">
+
+      </div>
+
+      <div class="mb-3">
+          <label >Diskon 10%</label>
+          <input type="text" class="form-control" required readonly name="diskon">
+
+      </div>
+
+      <div class="mb-3">
+          <label >Bayar</label>
+          <input type="text" class="form-control" required readonly name="bayar">
+      </div>
+      <button onclick="coba()">Proses</button>
+      <button onclick="coba()">Reset</button>
+  </div>
+
+</div>
+<script type="text/javascript">
+    function coba() {
+var nama_barang =  (document.form.nama_barang.value);
+
+var jumlah_barang = parseFloat(document.form.jumlah_barang.value);
+
+var harga_total =0.0;
+var subTotal = 0.0;
+var diskon = 0.0;
+var total =0.0;
+
+if(nama_barang == "Monitor"){
+    harga_total = 1000000;
+}else if(nama_barang == "CPU"){
+    harga_total = 3500000;
+}else if(nama_barang == "VGA"){
+    harga_total = 2500000;
+}else{
+    harga_total = 1500000;
+}
+
+sub = jumlah_barang*harga_total;
+if (document.form.member.checked == true){
+    diskon = 0.1 * sub;
+}
+else{
+    diskon=0.0;
+}
+total = sub-diskon;
+document.form.harga_barang.value = "Rp "+eval(harga_total);
+document.form.total.value= "Rp "+eval(sub);
+document.form.diskon.value= "Rp "+eval(diskon);
+document.form.bayar.value= "Rp "+eval(total);
+}
+</script>
+
+
+</body>
+</html>

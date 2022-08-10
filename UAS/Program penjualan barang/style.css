@@ -1,0 +1,180 @@
+@font-face {
+    font-family: "BerkshireSwash-Reguler";
+    scr: url(". ./Fonts/BerkshireSwash-Reguler.ttf");
+}
+
+* {
+    font-family: sans-serif;
+    margin: 0 auto;
+}
+
+body {
+    background-color: bisque;
+}
+
+.container {
+    margin: auto;
+    margin-top: 70px;
+    width: 70%;
+}
+
+.panel {
+    border: 1px #999999 solid;
+    box-shadow: 0 0 20px black;
+}
+
+.title {
+    font-family: "BerkshireSwash-Reguler";
+    padding: 10px 0;
+    text-align: center;
+    font-size: 45px;
+    font-weight: bold;
+    border-bottom: 3px #AFF solid;
+    background-color: #0290bb;
+    color: white;
+}
+
+.tabel1 {
+    width: 50%;
+    float: left;
+}
+
+.tabel2 {
+    width: 50%;
+    float: right;
+}
+
+.frm {
+    background-color: white;
+    padding: 20px 7px 7px 7px;
+    color: black;
+    height: 500px;
+}
+
+.kolomlabel {
+    margin: 0px 10px;
+    padding: 5px 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.kolomcontrol {
+    margin: 0px 20px;
+    margin-bottom: 20px;
+    padding: 5px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.nama,
+.jumlah,
+.kode,
+.harga {
+    margin: 0px 10px;
+    padding: 5px 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.bersih {
+    clear: both;
+}
+
+.textboxOUT {
+    font-size: 18px;
+    width: 100%;
+    height: 35px;
+    border-radius: 5px;
+    padding-left: 5px;
+    padding: 3px 0px 3px 10px;
+    color: black;
+    background-color: rgb(220, 220, 220);
+    border: 1px bisque solid;
+    box-shadow: inset 2px 2px 2px lightblue, 2px 2px 5px lightblue;
+}
+
+.textboxc,
+.textboxp,
+.textboxt,
+.textboxn {
+    font-size: 18px;
+    width: 100%;
+    height: 35px;
+    border-radius: 5px;
+    padding-left: 5px;
+    padding: 3px 0px 3px 10px;
+    color: black;
+    background-color: white;
+    box-shadow: inset 2px 2px 2px lightblue, 2px 2px 5px lightblue;
+}
+
+.textboxc,
+.textboxp,
+.textboxt,
+.textboxn,
+:focus {
+    border: 2px blanchedalmond solid;
+    /*  box-shadow: inset 2px 2px 2px sandybrown; */
+}
+
+.combobox {
+    font-size: 20px;
+    height: 40px;
+    border-radius: 7px;
+    border: 1px indigo solid;
+    box-shadow: inset 2px 2px 2px lightblue, 2px 2px 5px lightblue;
+    padding: 4px;
+    color: black;
+    background-color: #AFF;
+}
+
+.buttonn {
+    width: 100%;
+    height: 60px;
+}
+
+.buttonCP {
+
+}
+
+.pay {
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: solid 2px green;
+    padding: 10px 40px;
+    background-color: white;
+    box-shadow: inset 0 0 2px black;
+    color: green;
+    float: right;
+    margin-left: 20px;
+}
+
+.pay:hover {
+    background: green;
+    color: white;
+    border: 1px white solid;
+    box-shadow: inset 0 0 15px lemonchiffon;
+    cursor: pointer;
+}
+
+.cancle {
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: solid 2px red;
+    padding: 10px 40px;
+    background-color: white;
+    box-shadow: inset 0 0 2px black;
+    color: red;
+    float: right;
+    margin-left: 20px;
+}
+
+.cancle:hover {
+    background: red;
+    color: white;
+    border: 1px white solid;
+    box-shadow: inset 0 0 15px lemonchiffon;
+    cursor: pointer
+}

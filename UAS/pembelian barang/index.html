@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pembelian barang</title>
+</head>
+<body>
+    <h2>Pembelian Barang</h2>
+
+    <div class="mb-3">
+        <label >Nama Barang</label>
+        <select class="form-control" name="nambarang" required>
+          <option>Pilih</option>
+          <option value="Sepatu">Sepatu</option>
+          <option value="Baju">Baju</option>
+          <option value="Celana">celana</option>
+          <option value="Kerudung">Kerudung</option>
+        </select>
+      </div>
+    
+      <div class="mb-3">
+        <label >Jumlah Barang</label>
+        <input type="text" class="form-control"  placeholder="5" required name="jmlbarang">
+      </div>
+
+        </div>
+        <div class="mb-3">
+          <label >Harga Barang</label>
+          <input type="text" class="form-control" required readonly name="hrgbarang">
+
+        </div>
+
+        <button onclick="coba()">BELI</button>
+        <button onclick="coba()">BATAL</button>
+               
+
+        <div class="mb-3">
+          <label >Total</label>
+          <input type="text" class="form-control" required readonly name="total">
+
+        </div>
+      </form>
+    </div>
+    <script type="text/javascript">
+        function coba() {
+        
+            var nambarang =  (document.form.nambarang.value);
+
+            var jmlbarang = parseFloat(document.form.jmlbarang.value);
+
+            var hrgtotal =0.0;
+            var hrg_barang = 0.0;
+            var total =0.0;
+
+            if(nambarang == "Sepatu"){
+                hrgtotal = 300000;
+            }else if(nambarang == "Baju"){
+                hrgtotal = 150000;
+            }else if(nambarang == "Celana"){
+                hrgtotal = 200000;
+            }else{
+                hrgtotal = 30000;
+            }
+
+            var total = jmlbarang*hrgtotal;
+            document.form.hrgbarang.value = "Rp "+eval(hrgtotal);
+            document.form.total.value= "Rp "+eval(total);
+          }
+        </script>
+  </div>
+
+
+
+    
+</body>
+</html>

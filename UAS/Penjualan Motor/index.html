@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penjualan Motor</title>
+</head>
+ <body>
+    <h4 class="mb-3">Form Penjualan Motor</h4>
+    <div class="mb-3">
+        <label >Merk Motor</label>
+        <select class="form-control" id="merk_motor">
+          <option>Pilih Motor</option>
+          <option value="Honda">Yamaha</option>
+          <option value="Yamaha">Honda</option>
+          <option value="Suzuki">Suzuki</option>
+        </select>
+      </div>
+
+
+      <div class="mb-3">
+          <label class="col-md-4">Aksesoris :</label>
+
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="helm" value="Helm" />
+            <label class="form-check-label" for="Helm">helm</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="Jaket" value="Jaket" />
+            <label class="form-check-label" for="jaket">Jaket</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="Velg" value="Velg" />
+            <label class="form-check-label" for="Velg">Velg</label>
+          </div>
+
+      </div>
+
+
+      <div class="mb-3">
+          <label class="col-md-4">Cara Pembayaran :</label>
+          <div class="form-check form-check-inline">
+              <div><input class="form-check-input" type="radio" id="tunai" name="radio" value="Tunai" /><label for="pilihanbayar 1">Tunai</label></div>
+          </div>
+          <div class="form-check form-check-inline">
+              <div><input class="form-check-input" type="radio" id="kredit" name="radio" value="Kredit" /><label for="pilihanbayar 2">Kredit</label></div>
+          </div>
+      </div>
+
+      <div class="row">
+      <div class="mb-1 col-md-5">
+
+      <table class="table table-hover table-primary">
+          <thead>
+            <tr>
+              <th scope="col">Merk Motor </th>
+              <th scope="col">Harga</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td scope="row">Yamaha</td>
+              <td>18000000</td>
+            </tr>
+            <tr>
+              <td scope="row">Honda</td>
+              <td>20000000</td>
+            </tr>
+            <tr>
+              <td scope="row">Suzuki</td>
+              <td>15000000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="mb-1 col-md-5">
+
+          <table class="table table-hover table-primary">
+              <thead>
+                <tr>
+                  <th scope="col">Aksesoris </th>
+                  <th scope="col">Harga</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td scope="row">Helm</td>
+                  <td>300000</td>
+                </tr>
+                <tr>
+                  <td scope="row">Jaket</td>
+                  <td>200000</td>
+                </tr>
+                <tr>
+                  <td scope="row">Velg</td>
+                  <td>250000</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      <div class="mb-3">
+        <label >Harga</label>
+        <input type="text" class="form-control" required readonly id="harga_barang">
+
+      </div>
+
+      <div class="mb-3">
+        <label >Bunga/Diskon</label>
+        <input type="text" class="form-control" required readonly id="diskon">
+
+      </div>
+
+      <div class="mb-3">
+        <label >Total Bayar</label>
+        <input type="text" class="form-control" required readonly id="total_bayar">
+
+      </div>
+    </form>
+  </div>
+
+          <script type="text/javascript">
+             function coba() {
+              let merk_motor = document.getElementById("merk_motor").value;
+
+            let velg = document.getElementById("helm");
+            let helm = document.getElementById("jaket");
+            let jaket = document.getElementById("velg");
+            let tunai = document.getElementById("tunai");
+            let kredit = document.getElementById("kredit");
+
+            let total_bayar = document.getElementById("total_bayar").value;
+
+            let honda = 18000000;
+            let yamaha = 20000000;
+            let suzuki = 15000000;
+            // Pilih merk_motor
+            switch (merk_motor) {
+                case "Yamaha":
+                merk_motor = honda;
+                document.getElementById("harga_barang").value = merk_motor;
+                break;
+                case "Honda":
+                merk_motor = yamaha;
+                document.getElementById("harga_barang").value = merk_motor;
+                break;
+                case "Suzuki":
+                merk_motor = suzuki;
+                document.getElementById("harga_barang").value = merk_motor;
+                break;
+
+                default:
+                // alert("Pilih Merk Motor Terlebih Dahulu!")
+                break;
+            }
+            // Pilih Aksesoris
+            if (velg.checked) {
+                let hargahelm = 300000 + merk_motor;
+
+                document.getElementById("harga_barang").value = hargahelm;
+            } else if (helm.checked) {
+                let hargajaket = 200000 + merk_motor;
+
+                document.getElementById("harga_barang").value = hargajaket;
+            } else if (Velgchecked) {
+                let hargavelg = 250000 + merk_motor;
+
+                document.getElementById("harga_barang").value = hargavelg;
+            } else {
+            }
+            // Hitung kondisi aksesoris
+            if (helm.checked && jaket.checked && velg.checked) {
+                let harga_barang = merk_motor + 300000 + 200000 + 250000;
+
+                document.getElementById("harga_barang").value = harga_barang;
+            } else if (helm.checked && velg.checked) {
+                let harga_barang = merk_motor + 300000 + 250000;
+
+                document.getElementById("harga_barang").value = harga_barang;
+            } else if (velg.checked && jaket.checked) {
+                let harga_barang = merk_motor + 250000 + 200000;
+
+                document.getElementById("harga_barang").value = harga_barang;
+            } else if (helm.checked && jaket.checked) {
+                let harga_barang = merk_motor + 300000 + 200000;
+
+                document.getElementById("harga_barang").value = harga_barang;
+            }
+
+            // Pembayaran
+            if (tunai.checked) {
+                let diskon = 0.1 * document.getElementById("harga_barang").value;
+
+                total_bayar = document.getElementById("harga_barang").value - diskon;
+                document.getElementById("total_bayar").value = total_bayar;
+
+                document.getElementById("diskon").value =diskon;
+            } else if (kredit.checked) {
+                let hasilharga = parseInt(document.getElementById("harga_barang").value);
+                diskon = 0.15;
+
+                let hitung = hasilharga * diskon;
+
+                total_bayar = hitung + hasilharga;
+
+                document.getElementById("total_bayar").value = total_bayar;
+
+                document.getElementById("diskon").value =diskon;
+            }
+          }
+        </script>
+        <button onclick="coba()">Proses</button>
+        <button onclick="coba()">Reset</button>
+</body>
+</html>

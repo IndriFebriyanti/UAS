@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penggajian</title>
+</head>
+<body>
+<h2>Program Penggajian PT. Satu Malam 2 Cinta</h2> 
+<div class="mb-3">
+    <label >Nama Pegawai</label>
+    <input type="text" class="form-control"  placeholder="Surya Kencana" required name="nama_pegawai">
+  </div>
+
+
+  <div class="mb-3">
+    <label >Jam Kerja</label>
+    <input type="text" class="form-control"  placeholder="8" required name="jamker">
+  </div>
+
+<div class="mb-3">
+    <label >Upah perjam</label>
+    <input type="number" class="form-control"  placeholder="50000" required name="upah">
+
+  </div>
+
+  <div class="mb-3">
+    <label >Jumlah Anak</label>
+    <input type="number" class="form-control"  placeholder="1" required name="jmlanak">
+
+  </div>
+
+<button onclick="coba()">hasil</button>
+<button onclick="coba()">reset</button>
+
+  <div class="mb-3">
+    <label >Gaji</label>
+    <input type="text" class="form-control" required readonly name="gaji">
+
+  </div>
+
+  <div class="mb-3">
+    <label >Tunjangan Anak 10%</label>
+    <input type="text" class="form-control" required readonly name="tunjAnak">
+
+  </div>
+
+  <div class="mb-3">
+    <label >Total Gaji</label>
+    <input type="text" class="form-control" required readonly name="totgaji">
+
+  </div>
+
+<script type="text/javascript">
+    function coba() {
+      
+        var jam_kerja=parseInt(document.getElementById('jamker').value);
+        var upah=parseInt(document.getElementById('upah').value);
+        var jumlah_anak=parseInt(document.getElementById.('jmlanak').value);
+        var gaji = jamker*upah;
+            document.getElementById.gaji.value="Rp "+gaji;
+        var tunjAnak = gaji*0.1*jmlanak;
+            document.getElementById.tunjAnak.value="Rp "+tunjAnak;
+        var totgaji = gaji+tunjAnak;
+            document.getElementById.total_gaji.value="Rp "+totgaji;
+        }
+        </script>
+
+        </script>
+  </body>
+</html>
+</script>
+</body>
+</html>
